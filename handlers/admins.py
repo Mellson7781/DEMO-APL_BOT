@@ -13,7 +13,7 @@ from states.form import Applic
 admin_rt = Router()
 
 
-#Admin список
+#Права админа, нужно указать tg id
 admin = 5106745657
 
 
