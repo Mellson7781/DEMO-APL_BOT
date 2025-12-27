@@ -1,5 +1,7 @@
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
+from handlers.user import user_rt
+from handlers.admins import admin_rt
 import os, asyncio
 
 
@@ -7,7 +9,7 @@ import os, asyncio
 load_dotenv()
 
 
-#Получение токина бота из .env
+#Получение токина бота и url бд из .env 
 BOT_TOKEN = os.getenv("BOT_TOKEN") 
 
 
@@ -21,10 +23,11 @@ async def main():
     #Удаляем все накполеные обращения при запуске
     await bot.delete_webhook(drop_pending_updates=True)
     #Подключение роутеров
-    #dp.include_routers()
+    dp.include_routers(user_rt, admin_rt)
     #Запуск polling (Проще говоря запуск бота)
     await dp.start_polling(bot)
 
 
+#Точка входа
 if __name__ == "__main__":
     asyncio.run(main())
