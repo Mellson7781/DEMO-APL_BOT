@@ -64,8 +64,6 @@ bot/
 ├── requirements.txt # Зависимости проекта
 ├── README.md # Документация
 
-yaml
-
 ---
 
 ## ⚡ Установка и запуск
@@ -91,7 +89,9 @@ pip install -r requirements.txt
 4. Создаём .env на основе .env.example:
 
 BOT_TOKEN=YOUR_TOKEN_HERE
+
 ADMIN_ID=YOUR_TELEGRAM_ID
+
 DATABASE_URL=sqlite:///db.sqlite3
 5. Запускаем бота:
 
