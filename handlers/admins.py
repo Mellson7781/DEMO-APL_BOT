@@ -2,6 +2,8 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command
+from dotenv import load_dotenv
+import os
 from keyboards.inline import (menu_admin, kb_status_new,
                               kb_status_done, kb_status_in_work,
                               menu_status_new, menu_status_work, menu_back)
@@ -14,14 +16,15 @@ admin_rt = Router()
 
 
 #Права админа, нужно указать tg id
-admin = 5106745657
+load_dotenv()
+ADMIN_ID = int(os.getenv('ADMIN_ID'))
 
 
 #Вхождение в меню админа
 @admin_rt.message(Command('admins'))
 async def in_admins(message: Message):
     user_id = message.from_user.id
-    if user_id == admin:
+    if user_id == ADMIN_ID:
         await message.answer(
             'Админ-панель 🛠\n'
             'Выберите действие:',
