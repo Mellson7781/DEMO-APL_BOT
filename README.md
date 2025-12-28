@@ -65,7 +65,6 @@ bot/
 ├── README.md # Документация
 
 yaml
-Копировать код
 
 ---
 
@@ -75,30 +74,27 @@ yaml
 ```bash
 git clone https://github.com/Mellson7781/DEMO-APL_BOT.git
 cd DEMO-APL_BOT
+```
 
 2. Создаём виртуальное окружение:
 
-bash
-Копировать код
+```bash
 python -m venv .venv
 source .venv/bin/activate  # Linux/Mac
 .venv\Scripts\activate     # Windows
-
+```
 3. Устанавливаем зависимости:
 
-bash
-Копировать код
+```bash
 pip install -r requirements.txt
-
+```
 4. Создаём .env на основе .env.example:
 
-ini
-Копировать код
 BOT_TOKEN=YOUR_TOKEN_HERE
 ADMIN_ID=YOUR_TELEGRAM_ID
 DATABASE_URL=sqlite:///db.sqlite3
 5. Запускаем бота:
 
-bash
-Копировать код
+```bash
 python main.py
+```
